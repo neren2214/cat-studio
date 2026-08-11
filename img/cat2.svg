@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e7e9ef"/>
+      <stop offset="100%" stop-color="#c7cdd9"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg2)"/>
+  <!-- shadow -->
+  <ellipse cx="205" cy="255" rx="150" ry="18" fill="#00000012"/>
+  <!-- tail -->
+  <path d="M320,220 q60,-10 55,-70 q-3,-30 -30,-28 q20,10 15,35 q-5,35 -45,45 z" fill="#9aa3b4"/>
+  <!-- body lying -->
+  <ellipse cx="190" cy="215" rx="140" ry="55" fill="#aab2c2"/>
+  <!-- front paws -->
+  <ellipse cx="110" cy="250" rx="30" ry="14" fill="#9aa3b4"/>
+  <ellipse cx="165" cy="255" rx="30" ry="14" fill="#9aa3b4"/>
+  <!-- head -->
+  <circle cx="95" cy="165" r="62" fill="#b6bdcc"/>
+  <!-- ears -->
+  <polygon points="55,130 45,80 90,115" fill="#9aa3b4"/>
+  <polygon points="130,120 155,75 150,130" fill="#9aa3b4"/>
+  <!-- face patch -->
+  <ellipse cx="95" cy="185" rx="42" ry="30" fill="#dfe2e9"/>
+  <!-- eyes -->
+  <ellipse cx="75" cy="160" rx="10" ry="13" fill="#f2b73a"/>
+  <ellipse cx="115" cy="160" rx="10" ry="13" fill="#f2b73a"/>
+  <circle cx="75" cy="160" r="4" fill="#2a2a2a"/>
+  <circle cx="115" cy="160" r="4" fill="#2a2a2a"/>
+  <!-- nose -->
+  <polygon points="95,178 88,187 102,187" fill="#7c8194"/>
+  <path d="M95,187 q0,8 -10,10" stroke="#5c6072" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M95,187 q0,8 10,10" stroke="#5c6072" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- whiskers -->
+  <path d="M55,178 q-30,-2 -42,0" stroke="#fff" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M55,188 q-30,4 -42,7" stroke="#fff" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M135,178 q30,-2 42,0" stroke="#fff" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M135,188 q30,4 42,7" stroke="#fff" stroke-width="2" fill="none" opacity="0.8"/>
+</svg>

@@ -1,0 +1,262 @@
+// ==========================================================================
+// Котостудия — стили лендинга
+// Собственный SCSS поверх Bootstrap 5 (подключён отдельно через CDN в html)
+// ==========================================================================
+@use "sass:color";
+
+// ---------- Переменные ----------
+$color-primary:   #ff6fa5;
+$color-primary-dark: #e0538a;
+$color-bg:        #fbe3ea;
+$color-dark:      #23222b;
+$color-text:      #3a3a3a;
+$color-card:      #ffffff;
+
+$font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+$radius: 14px;
+$shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+$breakpoint-md: 768px;
+$breakpoint-sm: 480px;
+
+// ---------- Миксины ----------
+@mixin card {
+  background: $color-card;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+@mixin section-padding {
+  padding: 4rem 0;
+}
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// ---------- Базовые стили ----------
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-base;
+  color: $color-text;
+  background: $color-bg;
+  padding-top: 66px; // отступ под фиксированное меню
+}
+
+.section-title {
+  color: $color-primary-dark;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+// ---------- Навигация ----------
+.main-nav {
+  background: $color-dark;
+
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: $color-primary;
+
+    &:hover {
+      color: color.adjust($color-primary, $lightness: 10%);
+    }
+  }
+
+  .nav-link {
+    font-weight: 500;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+    }
+  }
+}
+
+// ---------- Герой-блок ----------
+.hero {
+  min-height: 60vh;
+  background:
+    linear-gradient(rgba($color-dark, 0.35), rgba($color-dark, 0.35)),
+    linear-gradient(135deg, $color-primary, $color-primary-dark);
+  color: #fff;
+
+  h1 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn-primary {
+    background-color: #fff;
+    color: $color-primary-dark;
+    border: none;
+    font-weight: 600;
+
+    &:hover {
+      background-color: color.adjust(#fff, $lightness: -8%);
+      color: $color-primary-dark;
+    }
+  }
+}
+
+// ---------- Общие секции ----------
+.section {
+  @include section-padding;
+}
+
+// ---------- О нас (Flexbox) ----------
+.about-section {
+  .about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: stretch;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+    }
+  }
+
+  .about-text {
+    flex: 1 1 55%;
+    @include card;
+    padding: 2rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .about-stats {
+    flex: 1 1 40%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .stat-card {
+      @include card;
+      @include flex-center(column);
+      flex: 1 1 calc(50% - 1rem);
+      min-width: 130px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $color-primary;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: $color-text;
+        margin-top: 0.25rem;
+      }
+    }
+  }
+}
+
+// ---------- Галерея (CSS Grid) ----------
+.gallery-section {
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .gallery-item {
+    @include card;
+    overflow: hidden;
+    margin: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    figcaption {
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      color: $color-text;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+    }
+  }
+}
+
+// ---------- Форма записи ----------
+.booking-section {
+  .booking-subtitle {
+    max-width: 560px;
+    margin: 0 auto 2rem;
+    color: color.adjust($color-text, $lightness: 15%);
+  }
+
+  .booking-form {
+    @include card;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    .form-label {
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .form-control {
+      border-radius: 8px;
+      border: 1px solid color.adjust($color-bg, $lightness: -15%);
+      padding: 0.6rem 0.9rem;
+
+      &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.25);
+      }
+    }
+
+    .btn-primary {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      font-weight: 600;
+      align-self: flex-start;
+      padding: 0.6rem 2rem;
+
+      &:hover {
+        background-color: $color-primary-dark;
+        border-color: $color-primary-dark;
+      }
+    }
+  }
+}
+
+// ---------- Подвал ----------
+.site-footer {
+  background: $color-dark;
+  color: #f1f1f1;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}

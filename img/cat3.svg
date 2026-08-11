@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe9c7"/>
+      <stop offset="100%" stop-color="#ffcf8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg3)"/>
+  <!-- motion lines -->
+  <path d="M40,90 q20,-4 38,2" stroke="#ffffff" stroke-width="4" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <path d="M55,120 q18,-4 34,1" stroke="#ffffff" stroke-width="4" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <path d="M330,80 q-20,-4 -38,3" stroke="#ffffff" stroke-width="4" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <!-- back legs stretched -->
+  <ellipse cx="290" cy="235" rx="20" ry="10" fill="#e07a35" transform="rotate(20 290 235)"/>
+  <ellipse cx="250" cy="245" rx="20" ry="10" fill="#e07a35" transform="rotate(35 250 245)"/>
+  <!-- tail -->
+  <path d="M300,190 q60,-10 60,-60 q0,-20 -18,-20 q10,15 5,32 q-8,30 -47,38 z" fill="#e8935a"/>
+  <!-- body jumping -->
+  <ellipse cx="200" cy="190" rx="90" ry="48" fill="#f2a15f" transform="rotate(-12 200 190)"/>
+  <!-- front paws reaching -->
+  <ellipse cx="110" cy="165" rx="18" ry="9" fill="#e07a35" transform="rotate(-30 110 165)"/>
+  <ellipse cx="130" cy="185" rx="18" ry="9" fill="#e07a35" transform="rotate(-15 130 185)"/>
+  <!-- head -->
+  <circle cx="115" cy="140" r="55" fill="#f2a15f"/>
+  <!-- ears -->
+  <polygon points="80,110 65,65 108,95" fill="#e07a35"/>
+  <polygon points="145,95 175,60 150,120" fill="#e07a35"/>
+  <!-- face patch -->
+  <ellipse cx="118" cy="158" rx="38" ry="27" fill="#fbe4cf"/>
+  <!-- eyes (excited, wide) -->
+  <circle cx="98" cy="138" r="11" fill="#2f2b26"/>
+  <circle cx="136" cy="136" r="11" fill="#2f2b26"/>
+  <circle cx="101" cy="134" r="3.5" fill="#fff"/>
+  <circle cx="139" cy="132" r="3.5" fill="#fff"/>
+  <!-- nose -->
+  <polygon points="117,152 110,160 124,160" fill="#a85a3d"/>
+  <path d="M117,160 q0,7 -9,9" stroke="#7a4326" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M117,160 q0,7 9,9" stroke="#7a4326" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- whiskers -->
+  <path d="M82,150 q-28,-4 -40,-3" stroke="#fff" stroke-width="2" fill="none" opacity="0.85"/>
+  <path d="M84,160 q-28,6 -40,10" stroke="#fff" stroke-width="2" fill="none" opacity="0.85"/>
+  <path d="M153,150 q26,-2 36,0" stroke="#fff" stroke-width="2" fill="none" opacity="0.85"/>
+</svg>
